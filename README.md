@@ -47,4 +47,4 @@ clasp open
 
 ## Create a test deployment and test on an existing Slides presentation
 
-Open the Deploy menu and create a test deployment on an existing Slides presentation.
+Open the Deploy menu and create a test deployment for an Editor add-on, on an existing Slides presentation.
