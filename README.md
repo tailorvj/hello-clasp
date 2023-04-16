@@ -29,6 +29,8 @@ git clone git@github.com:tailorvj/hello-clasp.git
 
 cd src
 
+clasp login
+
 clasp create --title 'hello clasp' --type 'slides'
 
 ```
