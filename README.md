@@ -27,7 +27,7 @@ git clone git@github.com:tailorvj/hello-clasp.git
 
 ```bash
 
-cd src
+cd hello-clasp/src
 
 clasp login
 
