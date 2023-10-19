@@ -6,9 +6,9 @@ Follow these steps to clone and deploy to Google Apps Script:
 
 ## Change log
 
-### v0.0.2 feature/gitpod - try node.js v20
+### v0.0.2 feature/gitpod - try node.js v18
 
-This is an experimental version to test whether Clasp would work with Node 20 on Gitpod
+This is an experimental version to test whether Clasp would work with Node 18 on Gitpod
 
 The reason for this is that I've encountered the following error when trying to use clasp on node.js v18:
 
