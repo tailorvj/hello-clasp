@@ -1,0 +1,12 @@
+{
+  "name": "hello-clasp",
+  "version": "0.0.2",
+  "description": "The 'Hello, World!' of Apps Script development for Google Slides Editor add-ons.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "tailor.vj@gmail.com",
+  "license": "AGPL"
+}
