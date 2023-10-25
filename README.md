@@ -6,22 +6,20 @@ Follow these steps to clone and deploy to Google Apps Script:
 
 ## Change log
 
-### v0.0.2 feature/gitpod - try node.js v18
+### Version 0.0.3
 
-This is an experimental version to test whether Clasp would work with Node 18 on Gitpod
+* Added learn folder with instructions and code you can copy/paste in your environment
+* Updated README
 
-The reason for this is that I've encountered the following error when trying to use clasp on node.js v18:
+## You can open this repo for immediate development on Gitpod
 
-```bash
-
-$ clasp login
-node:internal/modules/cjs/loader:1077
-  const err = new Error(message);
-              ^
-
-Error: Cannot find module 'define-data-property'
-
-```
+* Fork this project
+* Copy your repo URL from the browser address bar
+* Open https://gitpod.io/
+* Create a new workspace
+* Paste your repo address
+* Skip to Create a clasp project below
+* clasp login requires the use of curl for the final stage on Gitpod
 
 ## For local development (not on gitpod) This repo assumes you have Node.js, NPM and Clasp CLI installed
 
@@ -49,11 +47,15 @@ $ npm install -g @google/clasp
 
 ```
 
-## Clone this repo
+## Fork this repo
+
+Once it is forked to your Github profile, clone it to your desktop 
+
+IMPORTANT: replace <your-github> with your github user name
 
 ```bash
 
-git clone git@github.com:tailorvj/hello-clasp.git
+git clone git@github.com:<your-github>/hello-clasp.git
     
 ```
 

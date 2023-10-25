@@ -16,7 +16,23 @@ Create a feature branch
 $ git checkout -b 01clasp
 
 $ cd src
-$ clasp create --type slides
 $ clasp login
+$ clasp create --type slides
+
+Examine the new file created under your src folder
+
 $ clasp push
 $ clasp open
+
+Rename your online AppsScript project hello-clasp
+
+Create a new Slides document - https://slides.new
+
+Create a new test in the online AppsScript editor
+
+Run the test
+Open the Extensions -> hello-clasp menu and press Say Hello
+Authorize
+Press Say Hello again
+
+Welcome to the world of Google Workspace Editor add-on development
