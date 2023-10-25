@@ -6,6 +6,11 @@ Follow these steps to clone and deploy to Google Apps Script:
 
 ## Change log
 
+### version 0.0.6 - Throwing and handling errors
+
+* Added instructions for error throwing and handling. 
+* Added error related functionality to sidebar and AppsScript
+
 
 ### version 0.0.5 - create a simple dialgo
 

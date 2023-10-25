@@ -3,7 +3,7 @@ function onOpen() {
   ui.createMenu('Hello, World!')
     .addItem('Say Hello', 'helloWorld')
     .addItem('Open Sidebar', 'openSidebar')
-    .addItem('Open Dialog', 'openDialog') // Add a menu item to open the dialog
+    .addItem('Open Dialog', 'openDialog')
     .addToUi();
 }
 
@@ -25,4 +25,10 @@ function openDialog() {
     .setWidth(300)
     .setHeight(200);
   SlidesApp.getUi().showModalDialog(htmlOutput, 'Hello Dialog');
+}
+
+// Function that always returns an error
+function throwError() {
+  Logger.log('Error in the throwError function');
+  throw new Error('This is an intentional error from the backend.');
 }

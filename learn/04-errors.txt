@@ -1,0 +1,91 @@
+Error throwing and handling
+
+Add the following function to src/hello-clasp.js
+
+// Function that always returns an error
+function throwError() {
+  Logger.log('Error in the throwError function');
+  throw new Error('This is an intentional error from the backend.');
+}
+
+Modify src/siderbar.html to have another button that triggers that function and displays the error:
+
+AppsScript function that always returns an error:
+
+// Function that always returns an error
+function throwError() {
+  throw new Error('This is an intentional error from the backend.');
+}
+
+A new button that triggers the AppsScript function:
+
+    <!-- New button to trigger the error function -->
+    <div>
+        <input type="button" id="errorButton" class="action" value="Trigger Error">
+    </div>
+
+A client side event listener for that button:
+
+            // Event listener for the errorButton
+            errorButton.addEventListener("click", function () {
+                google.script.run.withFailureHandler(function(error) {
+                    // Display the error message in the errorDiv
+                    errorDiv.textContent = error.message;
+                    errorDiv.style.display = 'block';
+                }).throwError();
+            });
+
+
+
+The complete sidebar.html
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <title>My Sidebar</title>
+</head>
+
+<body>
+    <div>
+        <input type="button" id="helloWorldButton" class="action" value="Say Hello World">
+    </div>
+    
+    <!-- New button to trigger the error function -->
+    <div>
+        <input type="button" id="errorButton" class="action" value="Trigger Error">
+    </div>
+    
+    <!-- Div to display the error message -->
+    <div id="errorDiv" style="color: red; display: none;"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var helloWorldButton = document.getElementById("helloWorldButton");
+            var errorButton = document.getElementById("errorButton");
+            var errorDiv = document.getElementById("errorDiv");
+
+            helloWorldButton.addEventListener("click", function () {
+                try {
+                    google.script.run.helloWorld();
+                } catch (e) {
+                    window.alert("Error: " + e.details);
+                }
+            });
+
+            // Event listener for the errorButton
+            errorButton.addEventListener("click", function () {
+                google.script.run.withFailureHandler(function(error) {
+                    // Display the error message in the errorDiv
+                    errorDiv.textContent = error.message;
+                    errorDiv.style.display = 'block';
+                }).throwError();
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
