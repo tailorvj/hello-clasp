@@ -1,0 +1,75 @@
+Let's build a simple sidebar with a button that says 'Hello, world'
+
+Code is always in the src folder
+
+Create a sidebar.html file and insert the following code into it:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <title>My Sidebar</title>
+</head>
+
+<body>
+    <div>
+        <input type="button" id="helloWorldButton" class="action" value="Say Hello World">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var helloWorldButton = document.getElementById("helloWorldButton");
+
+            helloWorldButton.addEventListener("click", function () {
+                try {
+                    google.script.run.helloWorld();
+                } catch (e) {
+                    window.alert("Error: " . e.details);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+Update hello-clasp.js
+
+Add the following function:
+
+function openSidebar() {
+  var htmlOutput = HtmlService.createHtmlOutputFromFile('sidebar')
+    .setTitle('Hello sidebar')
+    .setWidth(300);
+  SlidesApp.getUi().showSidebar(htmlOutput);
+}
+
+Add a menu item that triggers the openSidebar function:
+
+function onOpen() {
+  var ui = SlidesApp.getUi();
+  ui.createMenu('Hello, World!')
+    .addItem('Say Hello', 'helloWorld')
+    .addItem('Open Sidebar', 'openSidebar')
+    .addToUi();
+}
+
+Please note: We have only added one line to the exisitng onOpen() function:
+
+    .addItem('Open Sidebar', 'openSidebar')
+
+It is actually a method of the createMenu() function
+
+Save and...
+
+$ clasp push
+$ clasp open
+
+Run a test
+Open the extension menu and trigger the sidebar
+Authorize the extension if necessary then re-open the sidebar
+Press the button
+
+What have you noticed about the button design? Examine the sidebar.html file. Where does that design come from?

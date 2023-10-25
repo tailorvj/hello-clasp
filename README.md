@@ -6,6 +6,11 @@ Follow these steps to clone and deploy to Google Apps Script:
 
 ## Change log
 
+### version 0.0.4 - create a simple sidebar
+
+* Added instructions for creating a sidebar. 
+* Added to the src: sidebar functions and sidebar.html
+
 ### Version 0.0.3
 
 * Added learn folder with instructions and code you can copy/paste in your environment
