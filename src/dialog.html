@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+  <title>Hello Dialog</title>
+</head>
+
+<body>
+  <div>
+    <input type="button" id="helloWorldButton" class="action" value="Say Hello World">
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var helloWorldButton = document.getElementById("helloWorldButton");
+
+      helloWorldButton.addEventListener("click", function () {
+        try {
+          google.script.run.helloWorld();
+        } catch (e) {
+          window.alert("Error: " + e.details);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

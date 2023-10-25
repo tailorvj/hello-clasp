@@ -6,6 +6,13 @@ Follow these steps to clone and deploy to Google Apps Script:
 
 ## Change log
 
+
+### version 0.0.5 - create a simple dialgo
+
+* Added instructions for creating a dialog. 
+* Added to the src: dialog related functions and dialog.html
+
+
 ### version 0.0.4 - create a simple sidebar
 
 * Added instructions for creating a sidebar. 

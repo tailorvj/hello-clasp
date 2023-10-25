@@ -3,7 +3,7 @@ function onOpen() {
   ui.createMenu('Hello, World!')
     .addItem('Say Hello', 'helloWorld')
     .addItem('Open Sidebar', 'openSidebar')
-    .addItem('Open Dialog', 'openDialog')
+    .addItem('Open Dialog', 'openDialog') // Add a menu item to open the dialog
     .addToUi();
 }
 
@@ -18,4 +18,11 @@ function openSidebar() {
     .setTitle('Hello sidebar')
     .setWidth(300);
   SlidesApp.getUi().showSidebar(htmlOutput);
+}
+
+function openDialog() {
+  var htmlOutput = HtmlService.createHtmlOutputFromFile('dialog')
+    .setWidth(300)
+    .setHeight(200);
+  SlidesApp.getUi().showModalDialog(htmlOutput, 'Hello Dialog');
 }
