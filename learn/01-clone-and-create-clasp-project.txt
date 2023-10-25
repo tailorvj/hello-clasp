@@ -1,0 +1,22 @@
+fork https://github.com/tailorvj/hello-clasp
+
+open terminal
+
+$ cd toyourcodingworkspacelocation
+$ git clone git@github.com:<your-user-name>/hello-clasp.git
+$ cd hello-clasp
+
+Let's have a look at the files:
+$ ls -a
+
+Open in editor
+$ code .
+
+Create a feature branch
+$ git checkout -b 01clasp
+
+$ cd src
+$ clasp create --type slides
+$ clasp login
+$ clasp push
+$ clasp open
