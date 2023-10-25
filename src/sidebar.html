@@ -10,17 +10,41 @@
     <div>
         <input type="button" id="helloWorldButton" class="action" value="Say Hello World">
     </div>
+    
+    <!-- New button to trigger the error function -->
+    <div>
+        <input type="button" id="errorButton" class="action" value="Trigger Error">
+    </div>
+    
+    <!-- Div to display the error message -->
+    <div id="errorDiv" style="color: red; display: none;"></div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var helloWorldButton = document.getElementById("helloWorldButton");
+            var errorButton = document.getElementById("errorButton");
+            var errorDiv = document.getElementById("errorDiv");
 
             helloWorldButton.addEventListener("click", function () {
                 try {
                     google.script.run.helloWorld();
                 } catch (e) {
-                    window.alert("Error: " . e.details);
+                    window.alert("Error: " + e.details);
                 }
+            });
+
+            // Event listener for the errorButton
+            errorButton.addEventListener("click", function () {
+                google.script.run
+                    .withSuccessHandler(function () {
+                        // Optional: Handle success here if needed
+                    })
+                    .withFailureHandler(function (error) {
+                        // Display the error message in the errorDiv
+                        errorDiv.textContent = error.message;
+                        errorDiv.style.display = 'block';
+                    })
+                    .throwError();
             });
         });
     </script>
