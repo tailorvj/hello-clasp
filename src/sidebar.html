@@ -15,7 +15,13 @@
     <div>
         <input type="button" id="errorButton" class="action" value="Trigger Error">
     </div>
-    
+
+    <div>
+        <input type="text" id="folderId" placeholder="Enter folder ID">
+        <input type="button" id="imageButton" class="action" value="Submit">
+       
+      </div>
+
     <!-- Div to display the error message -->
     <div id="errorDiv" style="color: red; display: none;"></div>
 
@@ -45,6 +51,22 @@
                         errorDiv.style.display = 'block';
                     })
                     .throwError();
+            });
+
+            imageButton.addEventListener("click", function () {
+                var folderId = document.getElementById('folderId').value;
+
+                google.script.run
+                    .withSuccessHandler(function () {
+                        errorDiv.textContent = 'got images';
+                        errorDiv.style.display = 'block';
+                    })
+                    .withFailureHandler(function (error) {
+                        // Display the error message in the errorDiv
+                        errorDiv.textContent = error.message;
+                        errorDiv.style.display = 'block';
+                    })
+                    .createSlidesFromImages(folderId);
             });
         });
     </script>

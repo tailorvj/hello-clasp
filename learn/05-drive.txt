@@ -1,0 +1,84 @@
+Let's integrate with Google Drive and create some slides
+
+Create a new file called drive.js in the src folder:
+
+  function createSlidesFromImages(folderId) {
+    if (!folderId) {
+      Logger.log('Folder ID not provided.');
+      return;
+    }
+    
+    Logger.log('Folder ID: ' + folderId);
+    
+    // Get the folder and its files
+    var folder = DriveApp.getFolderById(folderId);
+    var filesIterator = folder.getFilesByType(MimeType.PNG); // Adjusted to PNG
+    
+    // Count the total number of files
+    var files = [];
+    while (filesIterator.hasNext()) {
+      files.push(filesIterator.next());
+    }
+    Logger.log('Total PNG files found: ' + files.length);
+    
+    // Get the current Slides presentation
+    var presentation = SlidesApp.getActivePresentation();
+    var slideWidth = presentation.getPageWidth();
+    var slideHeight = presentation.getPageHeight();
+    
+    // Iterate through the files and add them to the Slides
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      Logger.log('Processing image: ' + file.getName());
+      
+      var slide = presentation.appendSlide(SlidesApp.PredefinedLayout.BLANK);
+      var image = slide.insertImage(file);
+      
+      // Center and stretch the image to fill the height of the Slides document
+      var originalWidth = image.getWidth();
+      var originalHeight = image.getHeight();
+      var newHeight = slideHeight;
+      var newWidth = originalWidth * (newHeight / originalHeight);
+      
+      image.setWidth(newWidth);
+      image.setHeight(newHeight);
+      image.setLeft((slideWidth - newWidth) / 2);
+      image.setTop(0);
+    }
+    
+    Logger.log('Total images processed: ' + files.length);
+  }
+
+
+  Modify the sidebar to call the createSlidesFromImages(folderId) function:
+
+
+  Button:
+      <div>
+        <input type="text" id="folderId" placeholder="Enter folder ID">
+        <input type="button" id="imageButton" class="action" value="Submit">   
+    </div>
+
+
+  Script:
+
+              imageButton.addEventListener("click", function () {
+                var folderId = document.getElementById('folderId').value;
+
+                google.script.run
+                    .withSuccessHandler(function () {
+                        errorDiv.textContent = 'got images';
+                        errorDiv.style.display = 'block';
+                    })
+                    .withFailureHandler(function (error) {
+                        // Display the error message in the errorDiv
+                        errorDiv.textContent = error.message;
+                        errorDiv.style.display = 'block';
+                    })
+                    .createSlidesFromImages(folderId);
+            });
+
+
+Push and test
+
+What did we learn about Drive integration? How fast did you get the images back from the Drive?
