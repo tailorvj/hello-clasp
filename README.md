@@ -4,36 +4,6 @@ The 'Hello, World!' of Apps Script development for Google Slides Editor add-ons.
 
 Follow these steps to clone and deploy to Google Apps Script:
 
-## Change log
-
-### version 0.0.7 - Integrating Google Drive
-
-* Added instructions for error throwing and handling. 
-* Added error related functionality to sidebar and AppsScript
-
-
-
-### version 0.0.6 - Throwing and handling errors
-
-* Added instructions for error throwing and handling. 
-* Added error related functionality to sidebar and AppsScript
-
-
-### version 0.0.5 - create a simple dialgo
-
-* Added instructions for creating a dialog. 
-* Added to the src: dialog related functions and dialog.html
-
-
-### version 0.0.4 - create a simple sidebar
-
-* Added instructions for creating a sidebar. 
-* Added to the src: sidebar functions and sidebar.html
-
-### Version 0.0.3
-
-* Added learn folder with instructions and code you can copy/paste in your environment
-* Updated README
 
 ## You can open this repo for immediate development on Gitpod
 
@@ -108,3 +78,35 @@ $ clasp open
 ## Create a test deployment and test on an existing Slides presentation
 
 Open the Deploy menu and create a test deployment for an Editor add-on, on an existing Slides presentation.
+
+
+## Change log
+
+### version 0.0.7 - Integrating Google Drive
+
+* Added instructions for error throwing and handling. 
+* Added error related functionality to sidebar and AppsScript
+
+
+
+### version 0.0.6 - Throwing and handling errors
+
+* Added instructions for error throwing and handling. 
+* Added error related functionality to sidebar and AppsScript
+
+
+### version 0.0.5 - create a simple dialgo
+
+* Added instructions for creating a dialog. 
+* Added to the src: dialog related functions and dialog.html
+
+
+### version 0.0.4 - create a simple sidebar
+
+* Added instructions for creating a sidebar. 
+* Added to the src: sidebar functions and sidebar.html
+
+### Version 0.0.3
+
+* Added learn folder with instructions and code you can copy/paste in your environment
+* Updated README
