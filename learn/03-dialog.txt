@@ -1,0 +1,28 @@
+Let's build a simple dialog with a button that says 'Hello, world'
+
+Code is always in the src folder
+
+Create a dialog.html file and insert the following code into it:
+
+
+
+
+
+Update hello-clasp.js
+
+Add the following function:
+
+
+Add a menu item that triggers the openDialog function:
+
+
+
+Save and...
+
+$ clasp push
+$ clasp open
+
+Run a test
+Open the extension menu and trigger the dialog
+
+Quiz: Try to create a button in the sidebar that opens the dialog
